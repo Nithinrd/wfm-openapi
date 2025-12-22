@@ -1,0 +1,21 @@
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
+paths:
+  /status/current:
+    get:
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: ClockNumber
+          in: query
+          required: true
+          schema:
+            type: integer
